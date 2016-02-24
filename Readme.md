@@ -4,7 +4,13 @@ A microservice retrieving data from Rosetta, returning JSON or XML based on HTTP
 
 ## Introduction
 
-Usage:
+**Start:**
+
+    java -jar emil-rosetta.jar
+
+Make sure that `application.yml` is the same directory as `emil-rosetta.jar`. The service is stateles and can safely be killed.
+
+**Usage:**
 
     GET http://hostname/IE12345
 
