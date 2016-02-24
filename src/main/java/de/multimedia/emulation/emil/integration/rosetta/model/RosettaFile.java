@@ -1,39 +1,37 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this template file, choose Tools | Templates and open the template in the editor.
  */
 package de.multimedia.emulation.emil.integration.rosetta.model;
 
-import de.multimedia.emulation.emil.integration.model.ArchiveFile;
-import de.multimedia.emulation.emil.integration.model.FileType;
+import de.multimedia.emulation.emil.integration.model.object.ArchiveFile;
+import de.multimedia.emulation.emil.integration.model.object.FileType;
 import de.multimedia.emulation.emil.integration.rosetta.model.pid.FilePid;
 import java.net.URL;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
 /**
  *
  * @author Marcus Bitzl <marcus.bitzl@bsb-muenchen.de>
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class RosettaFile implements ArchiveFile {
 
-  private FilePid filePid;
-  
+  private String filePid;
+
   private String fileOriginalName;
-  
+
   private FileType type;
 
   private URL url;
-  
+
   @Override
   public String getFileId() {
-    if (filePid != null) {
-      return filePid.getPid();  
-    }
-    return null;
+    return filePid;
   }
 
   @Override
-  public String getFileOrignalName() {
+  public String getFileOriginalName() {
     return fileOriginalName;
   }
 
@@ -48,7 +46,7 @@ public class RosettaFile implements ArchiveFile {
   }
 
   public void setFilePid(FilePid filePid) {
-    this.filePid = filePid;
+    this.filePid = filePid.getPid();
   }
 
   public void setFileOriginalName(String fileOriginalName) {
@@ -59,18 +57,17 @@ public class RosettaFile implements ArchiveFile {
   public void setUrl(URL url) {
     this.url = url;
   }
-  
+
   public void adjustFiletype() {
     if (hasExtension("iso")) {
       this.type = FileType.ISO;
-    }
-    else if (hasExtension("img")) {
+    } else if (hasExtension("img")) {
       this.type = FileType.IMG;
     }
   }
-  
+
   private boolean hasExtension(String extension) {
     return fileOriginalName.toLowerCase().endsWith(extension);
   }
-  
+
 }

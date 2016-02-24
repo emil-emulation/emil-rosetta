@@ -1,4 +1,4 @@
-package de.multimedia.emulation.emil.integration.model;
+package de.multimedia.emulation.emil.integration.model.object;
 
 /**
  *

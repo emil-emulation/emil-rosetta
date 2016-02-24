@@ -7,3 +7,18 @@ rosetta:
     username: <username>
     password: <password>
     institution: <institution>
+
+demoObject:
+  objectId: IE00000
+  files:
+    - fileId: FL00001
+      type: ISO
+      fileOriginalName: demo.ISO
+      url: http://example.com/demo.ISO
+    - fileId: FL00002
+      type: ISO
+      fileOriginalName: demo2.ISO
+      url: http://example.com/demo2.ISO
+
+server:
+  port: 1337
