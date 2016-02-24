@@ -1,0 +1,9 @@
+urls:
+  ieUpdate: http://<rosetta>/dpsws/repository/IEWebServices
+  pds: http://<rosetta>:8991/pds
+  deliveryTemplate: http://<rosetta>/delivery/DeliveryManagerServlet?dps_pid=[identifier]&dps_func=stream
+
+rosetta:
+    username: <username>
+    password: <password>
+    institution: <institution>
