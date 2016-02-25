@@ -27,4 +27,4 @@ This service also offers a freely configurable demo object (see application.yml.
 
 ## Content Negotiation
 
-If not ordered otherwise the service produces JSON. To get an XML representation, use `Accept: application/xml` header or add ".xml" at the end of the URL.
+If not ordered otherwise the service produces JSON. To get an XML representation, use `Accept: application/xml` header or add ".xml" at the end of the URL *(experimental)*.
