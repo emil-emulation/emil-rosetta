@@ -1,4 +1,4 @@
-# EMiL - Rosetta integration plugin
+# EMiL - Rosetta integration plugin [![Build Status](https://travis-ci.org/emil-emulation/emil-rosetta.svg?branch=master)](https://travis-ci.org/emil-emulation/emil-rosetta)
 
 A microservice retrieving data from Rosetta, returning JSON or XML based on HTTP content negotiation (default: JSON).
 
