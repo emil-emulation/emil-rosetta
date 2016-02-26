@@ -4,4 +4,4 @@ jdk:
   - oraclejdk8
   - oraclejdk7
 
-install: ./src/main/sh/install_rosetta_sdk_to_maven.sh
+install: source ./src/main/sh/install_rosetta_sdk_to_maven.sh
