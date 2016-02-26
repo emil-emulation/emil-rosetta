@@ -1,6 +1,6 @@
 package de.multimedia.emulation.emil.integration.rosetta.soap;
 
-import de.multimedia.emulation.emil.integration.controller.UrlGenerator;
+import de.multimedia.emulation.emil.integration.service.UrlGenerator;
 import de.multimedia.emulation.emil.integration.rosetta.model.RosettaFile;
 import de.multimedia.emulation.emil.integration.rosetta.model.pid.FilePid;
 import java.util.ArrayList;

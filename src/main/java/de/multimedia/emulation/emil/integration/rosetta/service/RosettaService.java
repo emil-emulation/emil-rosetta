@@ -1,7 +1,7 @@
 package de.multimedia.emulation.emil.integration.rosetta.service;
 
 
-import de.multimedia.emulation.emil.integration.controller.UrlGenerator;
+import de.multimedia.emulation.emil.integration.service.UrlGenerator;
 import de.multimedia.emulation.emil.integration.model.object.ArchiveObject;
 import de.multimedia.emulation.emil.integration.rosetta.model.RosettaFile;
 import de.multimedia.emulation.emil.integration.rosetta.model.RosettaObject;
