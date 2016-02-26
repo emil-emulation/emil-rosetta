@@ -4,4 +4,6 @@ jdk:
   - oraclejdk8
   - oraclejdk7
 
-install: source ./src/main/sh/install_rosetta_sdk_to_maven.sh
+install:
+  - curl -sS -O https://raw.githubusercontent.com/ExLibrisGroup/Rosetta.dps-sdk-projects/master/4.2/dps-sdk-deposit/lib/dps-sdk-4.2.0.jar
+  - mvn install:install-file -Dfile=dps-sdk-4.2.0.jar -DgroupId=com.exlibris.dps -DartifactId=dps-sdk -Dversion=4.2.0 -Dpackaging=jar
