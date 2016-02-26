@@ -1,4 +1,4 @@
-package de.multimedia.emulation.emil.integration.config;
+package de.multimedia.emulation.emil.integration.demo.model;
 
 import de.multimedia.emulation.emil.integration.model.object.ArchiveFile;
 import de.multimedia.emulation.emil.integration.model.object.FileType;

@@ -1,5 +1,7 @@
-package de.multimedia.emulation.emil.integration.config;
+package de.multimedia.emulation.emil.integration.demo.config;
 
+import de.multimedia.emulation.emil.integration.demo.model.DemoFile;
+import de.multimedia.emulation.emil.integration.demo.model.DemoObject;
 import de.multimedia.emulation.emil.integration.model.object.ArchiveObject;
 import java.util.List;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,21 +13,12 @@ import org.springframework.context.annotation.Configuration;
  */
 @ConfigurationProperties(prefix = "demoObject")
 @Configuration
-public class DemoObjectConfig implements ArchiveObject {
+public class DemoConfig {
 
   private String objectId;
 
   private List<DemoFile> files;
 
-  public String getObjectId() {
-    return objectId;
-  }
-
-  public void setObjectId(String objectId) {
-    this.objectId = objectId;
-  }
-
-  @Override
   public List<DemoFile> getFiles() {
     return files;
   }
@@ -34,9 +27,16 @@ public class DemoObjectConfig implements ArchiveObject {
     this.files = files;
   }
 
-  @Override
-  public String getId() {
+  public void setObjectId(String objectId) {
+    this.objectId = objectId;
+  }
+
+  public String getObjectId() {
     return objectId;
+  }
+
+  public ArchiveObject getDemoObject() {
+    return new DemoObject(objectId, files);
   }
 
 }

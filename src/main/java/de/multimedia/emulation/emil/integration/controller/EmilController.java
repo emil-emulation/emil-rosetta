@@ -3,7 +3,7 @@ package de.multimedia.emulation.emil.integration.controller;
 import de.multimedia.emulation.emil.integration.model.object.ArchiveObject;
 import de.multimedia.emulation.emil.integration.rosetta.model.pid.IEPid;
 import de.multimedia.emulation.emil.integration.rosetta.service.RosettaService;
-import de.multimedia.emulation.emil.integration.service.DemoService;
+import de.multimedia.emulation.emil.integration.demo.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
