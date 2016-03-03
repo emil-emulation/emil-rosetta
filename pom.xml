@@ -9,14 +9,15 @@
     
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<!--    <start-class>de.multimedia.emulation.emil.integration.Application</start-class>-->
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <!-- Dependencies -->
     <version.spring-ws-core>2.2.1.RELEASE</version.spring-ws-core>
     <version.dps-sdk>4.2.0</version.dps-sdk>
+    <version.mockito>1.10.8</version.mockito>
     <!-- Plugins -->
     <version.maven-jaxb2-plugin>0.12.3</version.maven-jaxb2-plugin>
+    <version.jacoco-maven-plugin>0.7.4.201502262128</version.jacoco-maven-plugin>
   </properties>
   
   <parent>
@@ -52,7 +53,12 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>${version.mockito}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -97,7 +103,38 @@
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
         </configuration>
+      </plugin>      
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${version.jacoco-maven-plugin}</version>
+        <executions>
+          <execution>
+            <id>pre-unit-test</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
+  
+  <reporting>
+    <!--    <excludeDefaults>true</excludeDefaults>-->
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${version.jacoco-maven-plugin}</version>
+      </plugin>
+    </plugins>
+  </reporting>
+
 </project>
