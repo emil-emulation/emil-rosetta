@@ -28,3 +28,18 @@ This service also offers a freely configurable demo object (see application.yml.
 ## Content Negotiation
 
 If not ordered otherwise the service produces JSON. To get an XML representation, use `Accept: application/xml` header or add ".xml" at the end of the URL *(experimental)*.
+
+## Development
+
+### Installation of Rosetta PDS-SDK
+
+To build this application, you need to install Rosetta DPS-SDK as Maven dependency as it is not available via public Maven repositories.
+
+For any Unix-based System you can use the following script:
+
+[/src/main/sh/install_rosetta_sdk_to_maven.sh](https://github.com/emil-emulation/emil-rosetta/blob/master/src/main/sh/install_rosetta_sdk_to_maven.sh)
+
+To install manually, you can use (no curl? Just download the file):
+
+    curl -sS -O https://raw.githubusercontent.com/ExLibrisGroup/Rosetta.dps-sdk-projects/master/4.2/dps-sdk-deposit/lib/dps-sdk-4.2.0.jar
+    mvn install:install-file -Dfile=dps-sdk-4.2.0.jar -DgroupId=com.exlibris.dps -DartifactId=dps-sdk -Dversion=4.2.0 -Dpackaging=jar
