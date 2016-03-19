@@ -1,6 +1,8 @@
 package de.multimedia.emulation.emil.integration.rosetta.service;
 
 
+import de.multimedia.emulation.emil.integration.model.pid.Pid;
+import de.multimedia.emulation.emil.integration.service.ArchiveService;
 import de.multimedia.emulation.emil.integration.service.UrlGenerator;
 import de.multimedia.emulation.emil.integration.model.object.ArchiveObject;
 import de.multimedia.emulation.emil.integration.rosetta.model.RosettaFile;
@@ -23,7 +25,7 @@ import org.xml.sax.InputSource;
  * @author Marcus Bitzl <marcus.bitzl@bsb-muenchen.de>
  */
 @Service
-public class RosettaService {
+public class RosettaService implements ArchiveService<IEPid> {
 
   private final IEUpdateClient updateClient;
 
@@ -52,15 +54,22 @@ public class RosettaService {
     return fileExtractionContentHandler.getFiles();
   }
 
+  @Override
   public ArchiveObject getArchiveObject(IEPid iePid) throws Exception {
     RosettaObject archiveObject = new RosettaObject(iePid);
     archiveObject.setFiles(filesFor(iePid));
     return archiveObject;
   }
-  
+
+  @Override
+  public IEPid getPid(String token) {
+    return new IEPid(token);
+  }
+
   public String xmlFor(IEPid iePid) throws Exception {
     try (PdsSession session = pdsService.login()) {
       return updateClient.getXml(session, iePid);
     }
   }
+
 }
