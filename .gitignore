@@ -1,4 +1,6 @@
+.idea/
 /target/
 application.yml
 nb-configuration.xml
 /nbproject/
+*.iml
