@@ -1,4 +1,4 @@
-package de.multimedia.emulation.emil.integration.model.pid;
+package de.multimedia.emulation.emil.integration.rosetta.model.pid;
 
 import de.multimedia.emulation.emil.integration.rosetta.model.pid.FilePid;
 import static org.hamcrest.CoreMatchers.is;
