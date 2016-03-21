@@ -14,7 +14,7 @@ Make sure that `application.yml` is the same directory as `emil-rosetta.jar`. Th
 
     GET http://hostname/IE12345
 
-    { 
+    {
       "objectId": "IE12345",
       "files": [
         { "fileId": "FL12312.iso", "type": "ISO", "url": "http://rosetta-hostname/delivery/DeliveryManagerServlet?dps_pid=FL12312&dps_func=stream" },
@@ -30,6 +30,14 @@ This service also offers a freely configurable demo object (see application.yml.
 If not ordered otherwise the service produces JSON. To get an XML representation, use `Accept: application/xml` header or add ".xml" at the end of the URL *(experimental)*.
 
 ## Development
+
+### Installation of EMiL Integration Framework
+
+Checkout and install EMiL Integration Framework to your local Maven repository:
+
+    git clone https://github.com/emil-emulation/emil-integration-framework.git
+    cd emil-integration-framework
+    mvn clean install
 
 ### Installation of Rosetta PDS-SDK
 
