@@ -51,3 +51,5 @@ To install manually, you can use (no curl? Just download the file):
 
     curl -sS -O https://raw.githubusercontent.com/ExLibrisGroup/Rosetta.dps-sdk-projects/master/4.2/dps-sdk-deposit/lib/dps-sdk-4.2.0.jar
     mvn install:install-file -Dfile=dps-sdk-4.2.0.jar -DgroupId=com.exlibris.dps -DartifactId=dps-sdk -Dversion=4.2.0 -Dpackaging=jar
+
+Rosetta PDS-SDK is Copyright © 2015, Ex Libris Code Share. See the libraries [license](https://github.com/ExLibrisGroup/Rosetta.dps-sdk-projects/blob/master/LICENSE) for details.
