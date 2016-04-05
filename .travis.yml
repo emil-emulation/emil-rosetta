@@ -1,12 +1,19 @@
 language: java
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 install:
-  - git clone https://github.com/emil-emulation/emil-integration-framework.git
-  - cd emil-integration-framework
-  - mvn clean install
-  - cd ..
-  - curl -sS -O https://raw.githubusercontent.com/ExLibrisGroup/Rosetta.dps-sdk-projects/master/4.2/dps-sdk-deposit/lib/dps-sdk-4.2.0.jar
-  - mvn install:install-file -Dfile=dps-sdk-4.2.0.jar -DgroupId=com.exlibris.dps -DartifactId=dps-sdk -Dversion=4.2.0 -Dpackaging=jar
+- git clone https://github.com/emil-emulation/emil-integration-framework.git
+- cd emil-integration-framework
+- mvn clean install
+- cd ..
+- curl -sS -O https://raw.githubusercontent.com/ExLibrisGroup/Rosetta.dps-sdk-projects/master/4.2/dps-sdk-deposit/lib/dps-sdk-4.2.0.jar
+- mvn install:install-file -Dfile=dps-sdk-4.2.0.jar -DgroupId=com.exlibris.dps -DartifactId=dps-sdk
+  -Dversion=4.2.0 -Dpackaging=jar
+deploy:
+  provider: releases
+  api_key:
+    secure: gdhT4Xy0V5KAPekQomLuhfzCMrabh9lmnF355cKFMV+mEE5AK9Y06vRPHyMigTC/tqgpwjOWooQqLKZglF5pCmgOPcUJGFsjo3F3ID/0N9xn7FDsQbofcpW9x50cFQvM/U0OBF7K8pSSzNNaNrqeRj419ARO+WuDnCgWl74tD4+tSMqUTceqqfn9mBhrwv2D06ogEVnLJDqQlKXlJTk1lXqlB6XBG7yUaE4OVeaKblhYJvVc/nOOfz54qeFrMDp3SsKE553smdfPTBLrRf80ZWsM5YRJaJ3She7bc73NiU3ek8FMVB/y48OITIcVfGL5wMYvw1GMU1qcqO9e+Yk0nNYZiDYsr6C2ioMPy/1Gu2gKhbBloqmjenVkVFHx0sIgmEgQkStrLyJMQYc4mJk2Iv9KmWx5VOswnDI+cMEL/MWqcTolfY2NvE1epooS59gl35CQJltTawg5q4UMNlZ8G9cWOp3C1m/xto0qbVuBlImic1nOGeDtdLh4NHOliGqu1VPZWBtYwhnxEOsgIW9mlt5bPagTiSWHUJ9TQbbRrGV00yRgyka16FO+dmMZ2VYb7IdMXfFx37RYi+rfZ+kCTj+I2JGaMIDJbjDAQsnk8WtsiKgZsSl6+VP5tzxf0/P0m3D4/xoAv2ttOn9g1FLZ2CFO0jcSG1IWYAXaeJfeDOA=
+  file_glob: true
+  file: target/emil-rosetta*.jar
+  on:
+    repo: emil-emulation/emil-rosetta
