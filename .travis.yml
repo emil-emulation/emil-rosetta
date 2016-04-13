@@ -11,6 +11,8 @@ install:
   -Dversion=4.2.0 -Dpackaging=jar
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - ls -l
+  - ls -l target
 deploy:
   provider: releases
   api_key:
