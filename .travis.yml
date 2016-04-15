@@ -6,8 +6,8 @@ install:
 - cd emil-integration-framework
 - mvn clean install
 - cd ..
-- curl -sS -O https://raw.githubusercontent.com/ExLibrisGroup/Rosetta.dps-sdk-projects/master/4.2/dps-sdk-deposit/lib/dps-sdk-4.2.0.jar
-- mvn install:install-file -Dfile=dps-sdk-4.2.0.jar -DgroupId=com.exlibris.dps -DartifactId=dps-sdk
+- curl -sS -O https://raw.githubusercontent.com/ExLibrisGroup/Rosetta.dps-sdk-projects/master/5.0.1/dps-sdk-deposit/lib/dps-sdk-5.0.1.jar
+- mvn install:install-file -Dfile=dps-sdk-5.0.1.jar -DgroupId=com.exlibris.dps -DartifactId=dps-sdk
   -Dversion=4.2.0 -Dpackaging=jar
 script:
   - mvn clean install
