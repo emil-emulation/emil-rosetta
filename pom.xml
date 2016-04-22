@@ -30,7 +30,7 @@
     <dependency>
       <groupId>de.multimedia.emulation.emil.integration</groupId>
       <artifactId>framework</artifactId>
-      <version>1.0-RELEASE</version>
+      <version>1.1-RELEASE</version>
     </dependency>
     <!--
     <dependency>
