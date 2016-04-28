@@ -60,9 +60,9 @@ public class RosettaFile implements ArchiveFile {
 
   public void adjustFiletype() {
     if (hasExtension("iso")) {
-      this.type = FileType.ISO;
+      this.type = FileType.CDROM;
     } else if (hasExtension("img")) {
-      this.type = FileType.IMG;
+      this.type = FileType.DISK;
     }
   }
 
