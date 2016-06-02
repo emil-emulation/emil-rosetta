@@ -1,7 +1,7 @@
 # EMiL - Rosetta integration service
 [![Build Status](https://travis-ci.org/emil-emulation/emil-rosetta.svg?branch=master)](https://travis-ci.org/emil-emulation/emil-rosetta)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/8d0a037738f541138b067d8cda7a269b)](https://www.codacy.com/app/marcus_2/emil-rosetta)
-[![codecov.io](https://codecov.io/github/emil-emulation/emil-integration-framework/coverage.svg?branch=master)](https://codecov.io/github/emil-emulation/emil-integration-framework?branch=master)
+
 
 A microservice retrieving data from Rosetta, returning JSON or XML based on HTTP content negotiation (default: JSON).
 
